@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>{{ configuracion.titulo }}</h2>
+<div mat-dialog-content class="mat-typography">{{ configuracion.contenido }}</div>
+<div mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close (click)="cancelar()">
+    <mat-icon>clear</mat-icon>{{ configuracion.botonNo }}
+  </button>
+  <button mat-button mat-dialog-close cdkFocusInitial (click)="aceptar()">
+    <mat-icon>send</mat-icon>{{ configuracion.botonSi }}
+  </button>
+</div>

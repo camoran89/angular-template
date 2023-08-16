@@ -1,0 +1,14 @@
+<mat-form-field class="w-100 my-2" appearance="outline">
+  <mat-label>{{ configuracion.etiqueta }}</mat-label>
+  <input matInput [id]="id" type="text" [value]="valor" [disabled]="estaDeshabilitado"
+    [placeholder]="configuracion.textoProvisional" [matAutocomplete]="auto" (input)="cambioEnEntrada($event)"
+    [placeholder]="configuracion.textoProvisional" autocomplete="off" />
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)='obtenerSeleccion($event.option.value)'>
+    <mat-option *ngFor="let opcion of opciones" [value]="'(' + opcion.clave + ') - ' + opcion.valor">
+      ({{ opcion.clave }}) - {{ opcion.valor }}
+    </mat-option>
+  </mat-autocomplete>
+  <mat-hint class="error" *ngIf="configuracion.esRequerido && configuracion.hayError">
+    {{ configuracion.mensajeError }}
+  </mat-hint>
+</mat-form-field>

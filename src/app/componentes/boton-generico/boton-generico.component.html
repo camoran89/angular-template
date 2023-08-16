@@ -1,0 +1,12 @@
+<button mat-fab extended class="w-100" color="primary" *ngIf="configuracion.color == 'primario'" [disabled]="configuracion.deshabilitado">
+  <mat-icon *ngIf="configuracion.icono !== ''">{{ configuracion.icono }}</mat-icon>
+  {{ configuracion.nombre }}
+</button>
+<button mat-fab extended class="w-100" color="warn" *ngIf="configuracion.color == 'peligro'" [disabled]="configuracion.deshabilitado">
+  <mat-icon *ngIf="configuracion.icono !== ''">{{ configuracion.icono }}</mat-icon>
+  {{ configuracion.nombre }}
+</button>
+<button mat-fab extended class="w-100" *ngIf="configuracion.color == 'basico'" [disabled]="configuracion.deshabilitado">
+  <mat-icon *ngIf="configuracion.icono !== ''">{{ configuracion.icono }}</mat-icon>
+  {{ configuracion.nombre }}
+</button>

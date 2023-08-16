@@ -1,0 +1,11 @@
+<mat-form-field class="w-100 my-2" appearance="outline">
+  <mat-label>{{ configuracion.etiqueta }}</mat-label>
+  <input matInput [id]="id" type="text" [value]="valor" [disabled]="estaDeshabilitado"
+    [placeholder]="configuracion.textoProvisional" (input)="cambioEnEntrada($event)" autocomplete="off" />
+  <mat-hint class="error" *ngIf="configuracion.esRequerido && configuracion.hayError">
+    {{ configuracion.mensajeError }}
+  </mat-hint>
+  <mat-hint class="error" *ngIf="!configuracion.hayError && longitud < configuracion.minimo">
+    {{ errorLongitud }}
+  </mat-hint>
+</mat-form-field>

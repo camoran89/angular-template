@@ -1,0 +1,17 @@
+<form [formGroup]="formulario" class="py-4">
+  <entrada-generica [configuracion]="primerNombreConfig" formControlName="primerNombre"></entrada-generica>
+  <autocompletado-generico [configuracion]="tipoDocumentoIdentidadConfig" formControlName="tipoDocumentoIdentidad"></autocompletado-generico>
+  <entrada-generica [configuracion]="numeroDocumentoIdentidadConfig" formControlName="numeroDocumentoIdentidad"></entrada-generica>
+  <entrada-generica [configuracion]="correoElectronicoConfig" formControlName="correoElectronico"></entrada-generica>
+  <contrasena-generico [configuracion]="contrasenaConfig" formArrayName="contrasena"></contrasena-generico>
+  <entrada-generica [configuracion]="telefonoConfig" formControlName="telefono"></entrada-generica>
+  <selector-fechas-generico [configuracion]="fechaNacimientoConfig" formArrayName="fechaNacimiento"></selector-fechas-generico>
+  <div class="row">
+    <div class="col-md-6">
+      <boton-generico [configuracion]="botonEnviarConfig" (click)="enviarDatos()"></boton-generico>
+    </div>
+    <div class="col-md-6">
+      <boton-generico [configuracion]="botonBorrarConfig" (click)="borrarDatos()"></boton-generico>
+    </div>
+  </div>
+</form>
